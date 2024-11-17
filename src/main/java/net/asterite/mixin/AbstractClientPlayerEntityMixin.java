@@ -21,7 +21,7 @@ public abstract class AbstractClientPlayerEntityMixin extends PlayerEntity {
 
     @Override
     public boolean shouldRender(double cameraX, double cameraY, double cameraZ) {
-        if(this.getOffHandStack().getItem() == ModItemRegistry.ENVISIONER && (Math.abs(MinecraftClient.getInstance().getCameraEntity().getRotationVecClient().dotProduct(this.getPos().subtract(cameraX, cameraY, cameraZ).normalize())) > 0.54 || this.isInSneakingPose() || MinecraftClient.getInstance().options.getPerspective().isFrontView())) {
+        if(this.getOffHandStack().getItem() == ModItemRegistry.ENVISIONER) {
             return false;
         }
         return super.shouldRender(cameraX, cameraY, cameraZ);
